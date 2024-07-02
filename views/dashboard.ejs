@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Fluent Fusion</title>
+        <link rel="website icon" href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI0pFMl9W_MoWl-sjRNRKrg_jGjHPMM6NJku0jsutPowFO7UEL">
+        <style>
+            .section-1 {
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                flex-direction: row;
+               
+            }
+            .box-1, .box-2 {
+                display: flex; 
+                flex-direction: column; 
+                width: 300px;
+                height: 350px;
+                border: 1px solid black;
+                border-radius: 5%;
+                margin-right: 100px;
+                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                margin-top: 150px;
+                background-color: white;
+                
+                
+            }
+            .box-1 .content, .box-2 .content {
+                 flex-grow: 1;
+                 display: flex;
+                 flex-direction: column;
+                 justify-content: flex-end;
+                 align-items: center;
+                 padding: 10px;
+           }
+
+            .box-1 h1, .box-2 h1 {
+                margin: 0;
+                font-size:17px;
+                font-weight:bold;
+                letter-spacing: 1px;
+                color: black;
+                text-align: center;
+ 
+            }
+            /* .box-1 p{
+                color:grey;
+                letter-spacing: 1px;
+                font-size:14px;
+                text-align: center;
+
+            } */
+            .box-1:hover,.box-2:hover{
+                background-color: white;
+            }
+            
+            .closebtn {
+            position: absolute;
+            top: 0;
+            left: 25px;
+            font-size: 36px;
+            margin-left:50px;
+        }
+
+    
+        .box-1 {
+            background-image: url('https://www.rksinstitute.in/store/1/Icons/Language%20Learning%20Icon.png');
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center;
+            transition: opacity 0.3s;
+        }
+        .box-2{
+            background-image: url('https://png.pngtree.com/png-clipart/20230813/original/pngtree-vector-illustration-of-a-speech-bubble-language-translation-icon-vector-picture-image_10598635.png');
+            background-size: cover;
+            background-repeat: no-repeat; 
+            background-position: center;
+            transition: opacity 0.3s;
+        }
+        .box-1:hover {
+            opacity: 0.7; 
+        }
+        .box-2:hover {
+            opacity: 0.7; 
+        }
+        
+
+
+        </style>
+    </head>
+    <body>
+        <center>
+            <div class="welcome-message">
+                <h1>Welcome <%= session.username %></h1>
+            </div>
+            <div class="path-message">
+                <h1>Choose Your Path....</h1>
+            </div>
+            <section class="section-1">
+                <button class="box-1" onclick="learnlanguages()">
+                    <div class="content">
+                        <h1>Start From Scratch</h1>
+                       
+                    </div>
+                </button>
+                <button class="box-2" onclick="translation()">
+                    <div class="content">
+                        <h1>Language Translator</h1>
+                    </div>
+                </button>
+            </section>
+        </center>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeSignup()">&times;</a>
+        <script>
+            function learnlanguages (){
+                window.location.href = "dashboard1"
+
+            }
+            function translation (){
+                window.location.href = "dashboard5"
+
+            }
+            function closeSignup (){
+                window.location.href = "home"
+
+            }
+            
+        </script>
+
+    </body> 
+</html>

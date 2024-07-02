@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Fluent Fusion</title>
+    <link rel="website icon" href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI0pFMl9W_MoWl-sjRNRKrg_jGjHPMM6NJku0jsutPowFO7UEL">
+    
+    <style>
+        body {
+            
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0;
+            background: #cdd6f3; 
+            /* background: black;  */
+            font-family: 'Poppins', sans-serif;
+            /* background-image: url('https://t4.ftcdn.net/jpg/03/03/24/81/360_F_303248153_e2LmwPtZwPpkO7iLHgL8hyMhO3wAukFO.jpg');
+            background-size: cover;
+            background-repeat: no-repeat; */
+        }
+
+        .container {
+            max-width: 690px;
+            width: 100%;
+            padding: 30px;
+            background: #fff;
+            border-radius: 7px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
+        }
+
+        .headContainer {
+            max-width: 690px;
+            width: 100%;
+            padding-bottom: 20px;
+            background: #fff;
+            border-radius: 7px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.01);
+            color: gray;
+        }
+
+        .wrapper {
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .text-input {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .text-input .to-text {
+            border-radius: 0px;
+            border-left: 1px solid #ccc;
+        }
+
+        .text-input textarea {
+            height: 250px;
+            width: 100%;
+            border: none;
+            outline: none;
+            resize: none;
+            background: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .text-input textarea::placeholder {
+            color: #b7b6b6;
+        }
+
+        .controls,
+        li,
+        .icons,
+        .icons i {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .controls {
+            list-style: none;
+            padding: 12px 15px;
+        }
+
+        .controls .row .icons {
+            width: 38%;
+        }
+
+        .controls .row .icons i {
+            width: 50px;
+            color: #adadad;
+            font-size: 14px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            justify-content: center;
+        }
+
+        .controls .row .from .icons {
+            padding-right: 15px;
+            border-right: 1px solid #ccc;
+        }
+
+        .controls .row.to .icons {
+            padding-left: 15px;
+            border-left: 1px solid #ccc;
+        }
+
+        .controls .row select {
+            color: #333;
+            border: none;
+            outline: none;
+            font-size: 18px;
+            background: none;
+            padding-left: 5px;
+        }
+
+        .text-input textarea::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .controls .row select::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .text-input textarea::-webkit-scrollbar-track,
+        .controls .row select::-webkit-scrollbar-track {
+            background: #fff;
+        }
+
+        .text-input textarea::-webkit-scrollbar-thumb {
+            background: #ddd;
+            border-radius: 8px;
+        }
+
+        .controls .row select::-webkit-scrollbar-thumb {
+            background: #999;
+            border-radius: 8px;
+            border-right: 2px solid #ffffff;
+        }
+
+        .controls .exchange {
+            color: #adadad;
+            cursor: pointer;
+            font-size: 16px;
+            transition: transform 0.2s ease;
+        }
+
+        .controls i:active {
+            transform: scale(0.9);
+        }
+
+        .container button {
+            width: 100%;
+            padding: 14px;
+            outline: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+            font-size: 17px;
+            border-radius: 5px;
+            background: rgb(27, 200, 36);
+        }
+        #copySuccessMessage {
+            color: green;
+            font-size: 14px;
+            margin-top: 10px;
+            /* padding-bottom: 0; */
+            display: none; 
+        }
+        .Thefooter{
+            color: gray;
+            font-size: 12px;
+            padding-top: 15px;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 660px) {
+            .container {
+                padding: 20px;
+            }
+
+            .wrapper .text-input {
+                flex-direction: column;
+            }
+
+            .text-input .to-text {
+                border-left: 0px;
+                border-top: 1px solid #ccc;
+            }
+
+            .text-input textarea {
+                height: 200px;
+            }
+
+            /* .controls .row .icons {
+                display: none;
+            } */
+
+            .container button {
+                padding: 13px;
+                font-size: 16px;
+            }
+
+            .controls .row select {
+                font-size: 16px;
+            }
+
+            .controls .exchange {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="headContainer">
+            <center><h1>Language Translator</h1></center>
+        </div>
+        <div class="wrapper">
+            <div class="text-input">
+                <textarea spellcheck="false" class="from-text" placeholder="Enter text"></textarea>
+                <textarea spellcheck="false" readonly disabled class="to-text" placeholder="Translation"></textarea>
+            </div>
+            <ul class="controls">
+                <li class="row from">
+                    <div class="icons">
+                        <i id="from" class="fas fa-volume-up"></i>
+                        <i id="from" class="fas fa-copy"></i>
+                    </div>
+                    <select>
+                        <option>English</option>
+                        <option>French</option>
+                        <option>Italian</option>
+                        <option>Zulu</option>
+                        <option>Indonesian</option>
+                        <option>Gujarati</option>
+                        <option>German</option>
+                        <option>Dutch</option>
+                        <option>Spanish</option>
+                        <option>Telugu</option>
+                        <option>Portuguese</option>
+                        <option>Greek</option>
+                        <option>polish</option>
+                        
+                        
+                    </select>
+                </li>
+                <li class="exchange"><i class="fas fa-exchange-alt"></i></li>
+                <li class="row to">
+                    <select>
+                        <option>English</option>
+                        <option>French</option>
+                        <option>Italian</option>
+                        <option>Zulu</option>
+                        <option>Indonesian</option>
+                        <option>Gujarati</option>
+                        <option>German</option>
+                        <option>Dutch</option>
+                        <option>Spanish</option>
+                        <option>Telugu</option>
+                        <option>Portuguese</option>
+                        <option>Greek</option>
+                        <option>polish</option>
+                        
+                    </select>
+                    <div class="icons">
+                        <i id="to" class="fas fa-volume-up"></i>
+                        <i id="to" class="fas fa-copy"></i>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <button>Translate Text</button>
+        <div id="copySuccessMessage" style="color: green;"></div>
+        <div class="Thefooter">Fluent Fusion</div>
+    </div>
+
+    <script>
+        const fromText = document.querySelector(".from-text");
+        const toText = document.querySelector(".to-text");
+        const translateBtn = document.querySelector("button");
+
+        translateBtn.addEventListener("click", () => {
+            const text = fromText.value.trim();
+            if (!text) return;
+
+            toText.setAttribute("placeholder", "Translating...");
+
+            const translateFrom = document.querySelector(".row.from select").value;
+            const translateTo = document.querySelector(".row.to select").value;
+            const apiUrl = `https://mymemory.translated.net/api/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
+            fetch(apiUrl)
+                .then((response) => response.json())
+                .then((data) => {
+                    toText.value = data.responseData.translatedText;
+                    toText.setAttribute("placeholder", "Translation");
+                })
+                .catch((error) => {
+                    console.error("Translation failed:", error);
+                });
+        });
+
+
+        function speakText(text, lang) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            speechSynthesis.speak(utterance);
+        }
+
+        const fromVolumeIcon = document.querySelector(".row.from .icons .fa-volume-up");
+        const toVolumeIcon = document.querySelector(".row.to .icons .fa-volume-up");
+
+        fromVolumeIcon.addEventListener("click", () => {
+            const fromText = document.querySelector(".from-text").value;
+            const fromLanguage = document.querySelector(".row.from select").value;
+            speakText(fromText, fromLanguage);
+        });
+
+        toVolumeIcon.addEventListener("click", () => {
+            const toText = document.querySelector(".to-text").value;
+            const toLanguage = document.querySelector(".row.to select").value;
+            speakText(toText, toLanguage);
+        
+        });
+
+
+
+        const fromCopyIcon = document.querySelector(".row.from .icons .fa-copy");
+        const toCopyIcon = document.querySelector(".row.to .icons .fa-copy");
+        const copySuccessMessage = document.getElementById("copySuccessMessage");
+
+        function showCopySuccessMessage() {
+            copySuccessMessage.textContent = "Text copied to clipboard!";
+            copySuccessMessage.style.display = "block"; 
+            setTimeout(function() {
+                copySuccessMessage.style.display = "none"; 
+            }, 4000);
+        }
+
+        fromCopyIcon.addEventListener("click", () => {
+            const fromText = document.querySelector(".from-text").value;
+                if (fromText) {
+                    navigator.clipboard.writeText(fromText).then(function() {
+                    showCopySuccessMessage();
+                    }).catch(function(err) {
+                        console.error('Copy to clipboard failed: ', err);
+                    });
+                }
+            });
+
+        toCopyIcon.addEventListener("click", () => {
+            const toText = document.querySelector(".to-text").value;
+            if (toText) {
+                navigator.clipboard.writeText(toText).then(function() {
+                showCopySuccessMessage();
+                }).catch(function(err) {
+                    console.error('Copy to clipboard failed: ', err);
+                });
+            }
+        });
+
+
+    </script>
+</body>
+</html>

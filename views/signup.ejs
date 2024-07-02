@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fluent Fusion</title>
+    <link rel="website icon" href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI0pFMl9W_MoWl-sjRNRKrg_jGjHPMM6NJku0jsutPowFO7UEL">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+      /* .box{
+        border:1px solid #ccc;
+        width:400px;
+        height:700px;
+        border-radius: 5px;
+      } */
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        letter-spacing: 1px;
+        background-color: white;
+        /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhO_CQlKuGrk4OfjryP7EFsCyrPcRBfhCKmEgx9c1ojpdN8L42_4IO43eKctJID9mxGZU&usqp=CAU'); */
+        background-image: url('https://www.translations-by-engineers.com/thumbnails/94928-0-0-Default.jpg');
+        /* background-image: url('https://lptranslations.com/wp-content/uploads/2022/08/Interpeter-vs.-Translator-2.jpg'); */
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .logos img {
+        width: 100px;
+        height: 40px;
+      }
+
+      .logos {
+        justify-content: space-between;
+        margin-left: 80px;
+        border-radius: 10px;
+      }
+
+      .ggbtn {
+        background-color: #fff;
+      }
+
+      .ffbtn {
+        background-color: #fff;
+      }
+
+      .login_form_container {
+        position: relative;
+        /* margin-right: -600px; */
+        margin-left: -600px;
+        width: 500px;
+        height: 700px;
+        background: #ccc; 
+        border-radius: 55px 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-top: 20px;
+      }
+
+      .login_form_container::before {
+        position: absolute;
+        width: 170%;
+        height: 170%;
+        content: '';
+      }
+
+      .login_form_container::after {
+        position: absolute;
+        width: 170%;
+        height: 170%;
+        content: '';
+      }
+
+      .login_form {
+        position: absolute;
+        content: '';
+        background-color: white;
+        border-radius: 50px 5px;
+        inset: 5px;
+        padding: 50px 40px;
+        z-index: 10;
+        color: black;
+      }
+
+      h2 {
+        font-size: 40px;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      .input_group {
+        margin-top: 40px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+      }
+
+      .input_text {
+        width: 95%;
+        height: 30px;
+        background: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #ccc;
+        font-size: 20px;
+        padding-left: 10px;
+        color: black;
+        /* color:rgb(226, 124, 194); */
+      }
+
+      ::placeholder {
+        font-size: 15px;
+        color: rgb(4, 4, 4);
+        /* color: rgb(226, 124, 194); */
+        letter-spacing: 1px;
+      }
+
+      .fa {
+        font-size: 20px;
+      }
+
+      .sub-head {
+        color: grey;
+        letter-spacing: 1px;
+        font-size: 20px;
+      }
+    </style>
+
+    </style>
+  </head>
+  <body>
+    <section class="box">
+        <div class="login_form_container">
+            <div class="login_form">
+              <form method="POST" action="/signupsubmit">
+                <h2>Signup</h2>
+                <div class="input_group">
+                    <i class="fa fa-user"></i>
+                    <input type="text" placeholder="Fullname" class="input_text" name="full_name"/>
+                </div>
+                <div class="input_group">
+                    <i class="fa fa-user"></i>
+                    <input type="text" placeholder="username" class="input_text" name="user_name"/>
+                </div>
+                <div class="input_group">
+                  <i class="fa fa-envelope"></i>
+                    <input type="email" placeholder="email" class="input_text" name="email"/>
+                </div>
+                <div class="input_group">
+                    <i class="fa fa-unlock-alt"></i>
+                    <input type="password"placeholder="Password" class="input_text"name="password"/>
+                </div>
+                <div id="login_button">
+           
+                    <input type="submit" style="height: 40px;width: 100px;color: black;background-color: #26d96b; margin-top: 40px;border-radius: 5px;">
+                </div><br>
+                <center class="sub-head">Or Sign up with</center>
+                <br>
+                <hr>
+                <br>
+              </form>
+            
+                <section class="logos">
+                    <button class="ffbtn"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5PzLcatn2DfuEWKy29cqsa3J_5kjDQLpnBbwWOZM0642eMYzwfQ8ZbCttPsmXb2DOUz4&usqp=CAU"></button> 
+                    <button class="ggbtn" onclick="loginWithGoogle()"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9RvudwGwrjmykijwifXHTcs0Trxn0qUrKEw&usqp=CAU"></button>
+                </section>                
+            </div>
+        </div>
+    </section>
+
+    <script>
+      function loginWithGoogle() {
+        window.location.href = 'http://localhost:3004/login';
+      }
+      </script>
+
+
+    
+  </body>
+</html>

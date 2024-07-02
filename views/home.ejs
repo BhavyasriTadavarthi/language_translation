@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html>
+    <title>Fluent Fusion</title>
+    <link rel="website icon" href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI0pFMl9W_MoWl-sjRNRKrg_jGjHPMM6NJku0jsutPowFO7UEL">
+    <head>
+        <style>
+            #section-1{
+                height:200px;
+            }
+            .logo {
+                border-radius: 10%; 
+                width: 80px;
+                height: auto; 
+                position: absolute;
+                top: 0px; 
+                left: 300px; 
+            }
+            nav{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap: 500px;
+                width: 100%;
+                height: 100px;
+                background-color: white;
+                padding: 10px;
+                position: relative;
+            }
+            .h1{
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                gap:0 35px;
+                font-size: 1.5rem;
+                margin-right: 100px;
+                position: absolute;
+                top:28px;
+            }
+            .lng{
+                color: rgb(151, 149, 149);
+                text-decoration: none;
+                font-weight: 700;
+                cursor: pointer;
+                
+            }
+            .language-container {
+                position: relative;
+               
+            }
+
+            .language-options {
+                display: none;
+                position: absolute;
+                top: 80%;
+                right: 20;
+                width:400px;
+                height:500px;
+                background-color: white;
+                color: black;
+                border: 2px double #ccc;
+                border-radius: 5%;
+                padding: 10px;
+
+            }
+            .language-options ul li{
+                list-style: none;
+                text-align: left;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5px;
+            }
+            .language-options ul li a {
+                text-decoration: none;
+                color: black;
+               
+           }
+           .language-options ul li:hover {
+               background-color:rgb(0,0,0,0.2);
+          }
+
+           .language-options ul li a:before {
+               content: '';
+               display: inline-block;
+               width: 25px;
+               height: 25px;
+               vertical-align: middle;
+               margin-right: 10px;
+               background-size: contain;
+               background-repeat: no-repeat;
+              
+               
+          }
+          .de:before {
+             background-image: url(https://flagsapi.com/BE/flat/64.png);
+          }
+
+          .en:before {
+             background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALcAAAB6CAMAAADKxjLHAAAASFBMVEX////MAAHMAADv7+/+/vrGFA/IFBPlxsPFDAjisbDMBAT///3j4+Pz+/vPAADJAADfu7rap6fx9fXKDAjnr7Dpz83CAADruLgxeUKYAAABtUlEQVR4nO3c62rCQBBA4Z1JvSW622pr3/9Nm2CnmKUOUiYpC+dT/BEkOxyDkBCSjl2o8+s+97Wib+fYZY6pS7F2exWdK0UPwat0C8ydRfT+pUVamPuS697SxNzjcVLRRubW6jhpZW56P0RvQ28PvQ29PfQ29PbQ29DbQ29Dbw+9Db099Db09tDb0NtDb0NvD70NvT30NvT20NvQ20Nv03DvOngrc/da9VZZYO7hJdJ0X0Gpgmu+vqfQVYYunYJLfGxyqY9vvX4Gr3JK22DT2JW+6D56maRSigaSae75P4p8V49Sxh809bc9N6Yf567/b1t4TXP/d7u/oPe66L0ueq+L3uui97rovS56r6tPEtxby69bY9dQSZEnUHYWVRlXypErjGeWkjbR8rjfeZ0+y2YbvEr8dYhLydd575JL/HWILg2Tn8/be6i2Dk9v3e2l7i1ZD+n5PdxvTQ++y/VY0/D1WHo/RG9Dbw+9Db099Db09tDb0NtDb0NvD70NvT30NvT20NvQ20NvQ28PvQ29PfQ29PbQ29DbQ29Dbw+9Db09y/Su789ZYu7w595e6ufeyhLPvf0CljdB+iOJAiwAAAAASUVORK5CYII=);
+           }
+          .fr:before {
+             background-image: url(https://flagsapi.com/FR/flat/64.png);
+            }
+
+          .ar:before {
+            background-image: url(https://flagsapi.com/AR/flat/64.png);
+            }
+          .in:before {
+            background-image: url(https://flagsapi.com/IN/flat/64.png);
+            }
+          .nl:before {
+            background-image: url(https://flagsapi.com/NL/flat/64.png);
+            }
+            .es:before {
+            background-image: url(https://flagsapi.com/ES/flat/64.png);
+            }
+            .pt:before {
+            background-image: url(https://flagsapi.com/PT/flat/64.png);
+            }
+            .gr:before {
+            background-image: url(https://flagsapi.com/GR/flat/64.png);
+            }
+            .ae:before {
+            background-image: url(https://flagsapi.com/AE/flat/64.png);
+            }
+            .kr:before {
+            background-image: url(https://flagsapi.com/KR/flat/64.png);
+            }
+            .cn:before {
+            background-image: url(https://flagsapi.com/CN/flat/64.png);
+            }
+            .hu:before {
+            background-image: url(https://flagsapi.com/HU/flat/64.png);
+            }
+            .ro:before {
+            background-image: url(https://flagsapi.com/RO/flat/64.png);
+            }
+            .tr:before {
+            background-image: url(https://flagsapi.com/TR/flat/64.png);
+            }
+            #section-2{
+                height:400px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 100px; 
+            }
+            .f-l{
+                float:left;
+                height:100%;
+                text-align: center;
+            }
+            .f-r{
+                float:right;
+                height:100%;
+                text-align: center;
+            }
+            .w-60{
+                width:60%;
+            }
+            .w-40{
+                width:40%;
+            }
+            .head{
+                color:black;
+                margin-top:45px;
+                margin-bottom:0;
+                font-size:40px;
+                font-weight:bold;
+                letter-spacing: 1px;
+                
+            }
+            .head1{
+                color:rgb(5, 55, 136);
+                margin-top: -30px;
+                margin-bottom: 0;
+                left:370px;
+                font-style: italic;
+                position: absolute;
+                font-size: 30px;
+                font-weight: bold;
+                letter-spacing: 1px;
+            }
+            .sub-head{
+                color:grey;
+                letter-spacing: 1px;
+                font-size:24px;
+            }
+    
+            .nav-btns button {
+                width: 280px;
+                padding: 10px; 
+                font-size: 16px; 
+                font-family: Arial, sans-serif; 
+                border: 2px solid #ccc; 
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                cursor: pointer; 
+            }
+            .nav-btns .signup {
+                background-color: rgb(5, 65, 161); 
+                color: #fff; 
+                border-radius: 5px; 
+            }
+            .nav-btns .signin {
+                background-color: white; 
+                color: rgb(5, 65, 161); 
+                border-radius: 5px; 
+            }
+
+            .nav-btns button:hover {
+                opacity: 0.8; 
+                box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+            }
+
+
+           
+            #section-3{
+                height: 250px;
+                margin-top: 100px;
+            }
+           .scroll-container {
+                display: flex;
+                white-space: nowrap; 
+                overflow-x: scroll;
+                padding: 10px; 
+                border: 1px solid #ccc;
+                width: 80%;
+            }
+
+            .scroll-item {
+                flex: 0 0 auto;
+                margin-right: 10px; 
+                /* border: 1px solid #ccc; 
+                border-radius: 5px; */
+                padding: 10px; 
+            }
+            .language-info {
+                display: flex;
+                align-items: center; 
+            }
+
+            .language-info img {
+                width: 30px; 
+                height: 20px; 
+                margin-right: 10px; 
+            }
+            .language-info .item-label {
+                font-size: 16px; 
+                font-weight: bold; 
+            }
+            #section-4{
+                height: 400px;
+                margin-bottom: 100px; 
+            }
+            #section-5{
+                height:400px;
+                margin-top: 100px;
+            }
+            #section-6{
+                height:400px;
+                margin-top: 100px;
+                margin-bottom: 80px;
+
+            }
+            footer {
+                height: 80px; 
+                background-color:  rgb(28, 157, 204); 
+                color: #fff; 
+                text-align: center;
+                padding: 20px; 
+            }
+
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            footer p {
+                font-size: 24px;
+                
+            }
+
+
+
+
+        </style>
+    </head>
+    <body>
+
+        <section id="section-1">
+            <nav>
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI0pFMl9W_MoWl-sjRNRKrg_jGjHPMM6NJku0jsutPowFO7UEL" class="logo"> 
+                <p class="head1">Fluent Fusion</p> 
+                
+                <div class="h1">
+                    <a class="lng" onclick="selectlanguage()">Site Language : English </a>
+                    <div id="language-options" class="language-options">
+                        <ul>
+                            <li>
+                                <a href="" class="en">English</a>
+                            </li>
+                           <li>
+                                <a href="" class="fr">French</a>
+                            </li>
+                            <li>
+                                <a href="" class="in">Hindi</a>
+                            </li>
+                            <li>
+                                <a href="#" class="de">German</a>
+                            </li>
+                            <li>
+                                <a href="" class="nl">Dutch</a>
+                            </li>
+                            <li>
+                                <a href="" class="es">Spanish</a>
+                            </li>
+                            <li>
+                                <a href="" class="pt">Portuguese</a>
+                            </li>
+                            <li>
+                                <a href="" class="gr">Greek</a>
+                            </li>
+                            <li>
+                                <a href="" class="ae">Arabic</a>
+                            </li>
+                            <li>
+                                <a href="" class="kr">Korean</a>
+                            </li>
+                            <li>
+                                <a href="" class="cn">Chinese</a>
+                            </li>
+                            <li>
+                                <a href="" class="hu">Hungerian</a>
+                            </li>
+                            <li>
+                                <a href="" class="ro">Europe</a>
+                            </li>
+                            <li>
+                                <a href="" class="tr">Turkey</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+            </nav>
+        </section>
+        <section id="section-2">
+            <div class="f-l w-60">
+                <p class="head">Unlock language potential with <br> <span style="font-size: 1.3em;">Fluent Fusion!</span></p>
+                <p class="sub-head">The free, enjoyable language learning and translation Web App.</p>
+                <div class="nav-btns">
+                    <button class="signup" onclick="signupform()">GET STARTED</button> <br><br>
+                    <button class="signin" onclick="signinform()">I ALREADY HAVE AN ACCOUNT</button>
+                </div>
+
+            </div>
+
+            <div class="f-r w-40">
+                <!-- <img src="https://img.freepik.com/premium-vector/online-translation-vector-concept_118813-15621.jpg" width="100%" height="100%"> -->
+                <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs2/322489437/original/3ab71b42543850bb96c6fc84b3b2ea5a77a448d0/do-translation-i-am-very-good-at-it.jpeg" width="100%" height="100%">
+            </div>
+            
+
+        </section>
+        <section id="section-3">
+            <center>
+                <div class="scroll-container">
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://cdn.britannica.com/44/344-004-494CC2E8/Flag-England.jpg" alt="Flag 1">
+                        <p class="item-label">ENGLISH</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/255px-Flag_of_France.svg.png" alt="Flag 2">
+                        <p class="item-label">FRENCH</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg" alt="Flag 3">
+                        <p class="item-label">HINDI</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png" alt="Flag 3">
+                        <p class="item-label">GERMAN</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/255px-Flag_of_the_Netherlands.svg.png" alt="Flag 3">
+                        <p class="item-label">DUTCH</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1200px-Bandera_de_Espa%C3%B1a.svg.png" alt="Flag 3">
+                        <p class="item-label">SPANISH</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://cdn.britannica.com/88/3588-004-E0E45339/Flag-Portugal.jpg" alt="Flag 3">
+                        <p class="item-label">PORTUGUESE</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://cdn.britannica.com/49/1049-004-AE4BAD3E/Flag-Greece.jpg" alt="Flag 3">
+                        <p class="item-label">GREEK</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://cdn.britannica.com/79/5779-050-46C999AF/Flag-Saudi-Arabia.jpg" alt="Flag 3">
+                        <p class="item-label">ARABIC</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://cdn.britannica.com/07/8007-004-8CF0B1A9/Flag-Denmark.jpg" alt="Flag 3">
+                        <p class="item-label">DANISH</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                      <div class="language-info">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_South_Korea.png" alt="Flag 3">
+                        <p class="item-label">KOREAN</p>
+                      </div>
+                    </div>
+                    <div class="scroll-item">
+                        <div class="language-info">
+                          <img src="https://cdn.britannica.com/90/7490-004-BAD4AA72/Flag-China.jpg" alt="Flag 3">
+                          <p class="item-label">CHINESE</p>
+                        </div>
+                      </div>
+                      <div class="scroll-item">
+                        <div class="language-info">
+                          <img src="https://cdn.britannica.com/55/1455-004-5897143C/Flag-Hungary.jpg" alt="Flag 3">
+                          <p class="item-label">HUNGARIAN</p>
+                        </div>
+                      </div>
+                </div>
+            </center>
+            
+          </section>
+
+          <section id="section-4">
+            <div class="f-l w-60">
+                <p class="head">Elevate Your World Through Language! <br> </p>
+                <p class="sub-head">Learn Languages the Fun Way with Games!</p>
+
+            </div>
+
+            <div class="f-r w-40">
+                <img src="https://media.istockphoto.com/id/1301656599/vector/headphones-and-books-logo-audiobook-online-learning-vector-education-concept-flat-design.jpg?s=612x612&w=0&k=20&c=WW2CgbzXDb5o0Bn2DRPDpY-HBkZtoIGhzNR_1T-rEZA=" width="100%" height="100%"/>
+            </div>
+
+          </section>
+
+          <section id="section-5">
+            <div class="f-l w-40">
+                <img src="https://media.istockphoto.com/id/1478638171/vector/translation-icon-vector-design-template-simple-and-modern.jpg?s=612x612&w=0&k=20&c=7ngGWoQip6QnsLnF7XxZ9szBY8zmzBsO-lkfW54Lk0I=" width="100%" height="100%"/>
+
+            </div>
+            <div class="f-r w-60">
+                <p class="head">Translating Boundaries, Bridging Worlds!<br> </p>
+                <p class="sub-head">Where Translation Meets Pronunciation, Uniting Voices Worldwide!</p>
+
+            </div>
+
+          </section>
+
+          <section id="section-6">
+            <div class="f-l w-60">
+                <p class="head">Empower Your Chat with Our Language Bot!<br></p>
+                <p class="sub-head">Chat with our bot to boost your language skills across all languages!</p>
+
+            </div>
+
+            <div class="f-r w-40">
+                <img src="https://solutions.technologyadvice.com/wp-content/uploads/2023/06/friendly-chatbot.jpg" width="100%" height="100%"/>
+            </div> 
+
+          </section>
+
+          <footer>
+            
+            <div style="width:300px; display: flex; justify-content: space-between; align-items: center;" class="footer-content">
+                
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-facebook_tfqsuc" width="24" height="24" style="padding-right: 10px;"/>
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-pinterest_kmz2wd" width="24" height="24" style="padding-right: 12px;"/>
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-instagram_b7nubh" width="24" height="24"style="padding-right: 14px;"/>
+                <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_48,h_48/icon-twitter_gtq8dv" width="24" height="24" style="padding-right: 16px;"/>
+    
+    
+            </div>
+        </footer>
+
+      
+        
+
+        <script>
+            function selectlanguage(){
+                
+                var languageOptions = document.getElementById('language-options');
+    
+                if (languageOptions.style.display === 'block') {
+                    languageOptions.style.display = 'none';
+                } else {
+                    languageOptions.style.display = 'block';
+                }
+            }
+            function signupform(){
+              window.location.href="signup";
+            }
+            function signinform(){
+              window.location.href="signin";
+            }
+
+        </script>
+
+    </body>
+</html>

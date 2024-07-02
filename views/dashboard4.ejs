@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fluent Fusion</title>
+    <link rel="website icon" href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI0pFMl9W_MoWl-sjRNRKrg_jGjHPMM6NJku0jsutPowFO7UEL">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=rfmvuZmH"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .quiz-container {
+            
+            margin-left: 5%; 
+             align-items: center;
+            justify-content: center;
+            
+            
+        }
+
+        .column1 {
+            flex: 1;
+            padding: 10px;
+            margin-left: 300px;
+          
+        }
+
+        .column2 {
+            flex: 1;
+            padding: 10px;
+            margin-right: 350px;
+            
+        }
+
+        .column1 h2 {
+            text-align: center;
+            margin-left: 60px;
+            margin-top: 10px;
+        }
+        .column2 h2 {
+            text-align: center;
+            margin-right: 20px;
+            margin-top: 10px;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+            width: 150px;
+            margin-left: 35%;
+           
+        }
+
+        .option {
+            margin: 5px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            box-shadow: rgba(211, 18, 18, 0.2);
+            border-radius: 10%;
+            font-size: 1.6rem;
+            text-align: center;
+            margin-right: 10px;
+            
+            
+        }
+        
+
+        .option:hover {
+            background-color:#ccc;
+        }
+       .button-container {
+           text-align: center;
+           margin: 20px 0;
+        }
+
+      .button-container button {
+        margin: 5px;
+        background-color: rgb(27, 200, 36);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        width: 100px;
+        height: 40px;
+        font-size: 16px;
+        cursor: pointer;
+       }
+        
+
+        .score {
+             text-align: center; 
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-top:25px;
+
+        }
+
+        /* .error-msg {
+            text-align: center;
+            color: red;
+        } */
+
+        .matching-set {
+            display: none;
+        }
+
+        .matching-set.active {
+            display: flex;
+            align-items: center;
+        }
+        .error-msg {
+            position: relative;
+            padding: .75rem 1.25rem;
+            margin: 1rem;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+            color: #721c24;
+            background-color:'';
+            width:100%;
+            text-align: center;    
+        }
+        #submit {
+            text-align: center;
+           margin: 20px 0;
+           margin-left:720px;
+           margin-top:0px;
+        }
+
+    </style>
+</head>
+<body>
+   <div class="quiz-container matching-set active" id="matching-set-1">
+        <div class="column1">
+            <h2>Set 1: English</h2>
+            <ul class="options" id="column-a">
+                <li class="option" data-match="a">cat</li>
+                <li class="option" data-match="b">boy</li>
+                <li class="option" data-match="c">and</li>
+                <li class="option" data-match="d">a</li>
+                <li class="option" data-match="e">man</li>
+            </ul>
+        </div>
+        <div class="column2">
+            <h2>Set 1: French</h2>
+            <ul class="options" id="column-b">
+                <li class="option" data-match="b">garcon</li>
+                <li class="option" data-match="c">et</li>
+                <li class="option" data-match="a">chat</li>
+                <li class="option" data-match="e">homme</li>
+                <li class="option" data-match="d">un</li>
+             </ul>
+        </div>
+    </div>
+    
+
+   <div class="quiz-container matching-set" id="matching-set-2">
+        <div class="column1">
+            <h2>Set 2: English</h2>
+            <ul class="options" id="column-a-2">
+                <li class="option" data-match="f">the girl</li>
+                <li class="option" data-match="g">cat</li>
+                <li class="option" data-match="h">the woman</li>
+                <li class="option" data-match="i">I</li>
+                <li class="option" data-match="j">man</li>
+            </ul>
+        </div>
+        <div class="column2">
+            <h2>Set 2: French</h2>
+            <ul class="options" id="column-b-2">
+                <li class="option" data-match="g">chat</li>
+                <li class="option" data-match="f">la fille</li>
+                <li class="option" data-match="i">je</li>
+                <li class="option" data-match="j">homme</li>
+                <li class="option" data-match="h">la femme</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="quiz-container matching-set" id="matching-set-3">
+        <div class="column1">
+            <h2>Set 3: English</h2>
+            <ul class="options" id="column-a-2">
+                <li class="option" data-match="f">am</li>
+                <li class="option" data-match="g">the horse</li>
+                <li class="option" data-match="h">the dog</li>
+                <li class="option" data-match="i">It's</li>
+                <li class="option" data-match="j">you</li>
+            </ul>
+        </div>
+        <div class="column2">
+            <h2>Set 3: French</h2>
+            <ul class="options" id="column-b-2">
+                <li class="option" data-match="g">le cheval</li>
+                <li class="option" data-match="i">C'est</li>
+                <li class="option" data-match="j">tu</li>
+                <li class="option" data-match="f">suis</li>
+                <li class="option" data-match="h">le chien</li>
+            </ul>
+        </div>
+    </div>
+   
+
+    <div class="quiz-container matching-set active" id="matching-set-4">
+        <div class="column1">
+            <h2>Set 4: English</h2>
+            <ul class="options" id="column-a">
+                <li class="option" data-match="a">pizza</li>
+                <li class="option" data-match="b">the orange</li>
+                <li class="option" data-match="c">the croissant</li>
+                <li class="option" data-match="d">eating</li>
+                <li class="option" data-match="e">yes</li>
+            </ul>
+        </div>
+        <div class="column2">
+            <h2>Set 4: French</h2>
+            <ul class="options" id="column-b">
+                <li class="option" data-match="c">le croissant</li>
+                <li class="option" data-match="d">manges</li>
+                <li class="option" data-match="b">l'orange</li>
+                <li class="option" data-match="e">oui</li>
+                <li class="option" data-match="a">pizza</li>
+            </ul>
+        </div>
+    </div>
+   
+
+    <div class="quiz-container matching-set active" id="matching-set-5">
+        <div class="column1">
+            <h2>Set 5: English</h2>
+            <ul class="options" id="column-a">
+                <li class="option" data-match="a">cat</li>
+                <li class="option" data-match="b">boy</li>
+                <li class="option" data-match="c">and</li>
+                <li class="option" data-match="d">a</li>
+                <li class="option" data-match="e">man</li>
+            </ul>
+        </div>
+        <div class="column2">
+            <h2>Set 5: French</h2>
+            <ul class="options" id="column-b">
+                <li class="option" data-match="b">garcon</li>
+                <li class="option" data-match="c">et</li>
+                <li class="option" data-match="a">chat</li>
+                <li class="option" data-match="e">homme</li>
+                <li class="option" data-match="d">un</li>
+            </ul>
+        </div>
+    </div>
+    <div class="error-msg" id="error-msg"></div>
+    <div class="button-container">
+        <button id="previous-set">Previous</button>
+        <button id="next-set">Next</button>
+        <button id="reset-set">Reset</button>
+        <button id="submit" >Submit</button>
+    </div>
+    <div class="score">Score: <span id="score">0</span> &#10084;</div>
+
+    <script>
+        const options = Array.from(document.querySelectorAll('.option'));
+        options.forEach(option => {
+        option.addEventListener('mouseover', () => {
+            const word = option.textContent;
+            responsiveVoice.speak(word, 'French Female', { rate: 1 });
+        });
+    });
+        
+        let selectedOptions = [];
+        let score = 0;
+        const errorMsg = document.getElementById('error-msg');
+        const scoreElement = document.getElementById('score');
+        const matchingSets = document.querySelectorAll('.matching-set');
+        let currentSetIndex = 0;
+       function showMatchingSet(index) {
+            matchingSets.forEach((set, i) => {
+                if (i === index) {
+                    set.classList.add('active');
+                } else {
+                    set.classList.remove('active');
+                }
+            });
+        }
+
+        showMatchingSet(currentSetIndex);
+
+        const previousSetButton = document.getElementById('previous-set');
+    const nextSetButton = document.getElementById('next-set');
+    const resetSetButton = document.getElementById('reset-set');
+
+    const submitButton = document.getElementById('submit-answers');
+
+    previousSetButton.addEventListener('click', () => {
+        currentSetIndex = (currentSetIndex - 1 + matchingSets.length) % matchingSets.length;
+        showMatchingSet(currentSetIndex);
+        resetScoreAndSelections();
+    });
+
+    nextSetButton.addEventListener('click', () => {
+        currentSetIndex = (currentSetIndex + 1) % matchingSets.length;
+        showMatchingSet(currentSetIndex);
+        resetScoreAndSelections();
+    });
+
+    resetSetButton.addEventListener('click', () => {
+        currentSetIndex = 0;
+        showMatchingSet(currentSetIndex);
+        resetScoreAndSelections();
+    });
+    document.getElementById("submit").addEventListener('click', function (event) {
+        if (score === 5) {
+                const imageUrl = "data:image/png;base64,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";  // Replace with your actual image URL
+                window.location.href = `dashboard2?imageUrl=${encodeURIComponent(imageUrl)}`;
+            } else {
+                alert("You need to score 5 to proceed.");
+            }
+        });
+
+
+
+        function checkIfAllSetsCompleted() {
+    const submitButton = document.getElementById('submit');
+    if (currentSetIndex === 4) {  // Check if it's the 5th set
+        submitButton.style.display = 'block';
+    } else {
+        submitButton.style.display = 'none';
+    }
+}
+
+function showMatchingSet(index) {
+    matchingSets.forEach((set, i) => {
+        if (i === index) {
+            set.classList.add('active');
+        } else {
+            set.classList.remove('active');
+        }
+    });
+    checkIfAllSetsCompleted(); // Add this line to update the submit button visibility
+}
+
+
+
+
+
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                if (!option.classList.contains('matched') && selectedOptions.length < 2) {
+                    option.classList.add('selected');
+                    selectedOptions.push(option);
+
+                    if (selectedOptions.length === 2) {
+                        const [option1, option2] = selectedOptions;
+
+                        if (option1.getAttribute('data-match') === option2.getAttribute('data-match')) {
+                            option1.classList.add('correct', 'matched');
+                            option2.classList.add('correct', 'matched');
+                            score++;
+                            scoreElement.textContent = score;
+                            errorMsg.style.backgroundColor = 'rgb(27, 200, 36)';
+                            errorMsg.textContent = 'correct match!';
+                            // errorMsg.style.backgroundColor = 'greenyellow';
+                        } else {
+                            errorMsg.textContent = 'Incorrect match! Try again.';
+                            errorMsg.style.backgroundColor = '#f8d7da';
+                            setTimeout(() => {
+                                option1.classList.remove('selected');
+                                option2.classList.remove('selected');
+                                // errorMsg.style.backgroundColor = '#f8d7da';
+                            }, 1000);
+                        }
+
+                        selectedOptions = [];
+                    }
+                }
+                checkIfAllSetsCompleted();
+            });
+        });
+
+        function resetScoreAndSelections() {
+            options.forEach(option => {
+                option.classList.remove('selected', 'correct', 'matched');
+            });
+
+            selectedOptions = [];
+            score = 0;
+            scoreElement.textContent = score;
+            errorMsg.style.backgroundColor = '';
+            errorMsg.textContent = '';
+        }
+  
+
+//         function submitAnswers() {
+
+//              window.location.href = 'dashboard1';
+// }
+        
+    </script>
+</body>
+</html>

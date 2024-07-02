@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fluent Fusion</title>
+    <link rel="website icon" href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI0pFMl9W_MoWl-sjRNRKrg_jGjHPMM6NJku0jsutPowFO7UEL">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: white;
+            background-image: url('https://www.translations-by-engineers.com/thumbnails/94928-0-0-Default.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .login_form_container {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            margin-left:-600px;
+            background: #ccc;
+            border-radius: 50px 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .login_form_container::before {
+            position: absolute;
+            width: 170%;
+            height: 170%;
+            content: '';
+        }
+
+        .login_form_container::after {
+            position: absolute;
+            width: 170%;
+            height: 170%;
+            content: '';
+        }
+
+        .login_form {
+            position: absolute;
+            content: '';
+            background-color: white;
+            border-radius: 50px 5px;
+            inset: 5px;
+            padding: 50px 40px;
+            z-index: 10;
+            color: black;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 40px;
+            font-weight: 600;
+        }
+
+        .input_group {
+            margin-top: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+
+        .input_text {
+            width: 95%;
+            height: 30px;
+            background: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid black;
+            font-size: 20px;
+            padding-left: 10px;
+            color: black;
+        }
+
+        ::placeholder {
+            font-size: 15px;
+            color: rgb(4, 4, 4);
+            letter-spacing: 1px;
+        }
+
+        .sub-head {
+            color: grey;
+            letter-spacing: 1px;
+            font-size: 20px;
+        }
+
+        .sub-head1 {
+            color: grey;
+            letter-spacing: 1px;
+            font-size: 18px;
+        }
+
+        .signuptext {
+            float: left;
+            right: 0px;
+            bottom: 15px;
+        }
+
+        #login_button {
+            float: left;
+        }
+
+        .footer {
+            color: grey;
+            letter-spacing: 1px;
+            font-size: 15px;
+            float: left;
+            margin-top:100px;
+            margin-left: -100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login_form_container">
+        <div class="login_form">
+            <form method="POST" action="/signinsubmit">
+                <h2>Login</h2>
+                <div class="input_group">
+                    <i class="fa fa-envelope"></i>
+                    <input type="email" placeholder="email" class="input_text" name="email" />
+                </div>
+                <div class="input_group">
+                    <i class="fa fa-unlock-alt"></i>
+                    <input type="password" placeholder="Password" class="input_text" name="password" />
+                </div>
+                <div id="login_button">
+                    <input type="submit"
+                        style="height: 40px;width: 100px;color: #5fea94;background-color: rgb(43, 201, 43); margin-top: 40px;border-radius: 5px;">
+                </div>
+                <div class="footer">
+                    <a>Forgot Password ?</a>
+                </div>
+                <div class="signuptext">
+                    <p class="sub-head1">Don't have an Account? <i class="fa fa-user"></i> <a href="signup">SIGN UP</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

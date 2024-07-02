@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluent Fusion</title>
+    <link rel="website icon" href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI0pFMl9W_MoWl-sjRNRKrg_jGjHPMM6NJku0jsutPowFO7UEL">
+    <style>
+        body { 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 600vh;
+            
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            /* text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; */
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            flex: 15%;
+            background:white;
+            /* background: #333; */
+            color: #fff;
+            padding: 10px;
+        }
+        
+
+        .content {
+            flex: 60%;
+            background:#fff;
+            padding: 10px;
+            margin-top:30px;
+            margin-right:20%;
+        }
+
+        .ads {
+            flex: 20%;
+            background: #fff;
+            color: #333;
+            padding: 1px;
+        }
+        .addbox{
+            width:220px;
+            height:150px;
+            border:2px solid #ccc;
+            border-radius: 8px;
+            color:white;
+            margin: 50px;
+            display: inline-block;
+            vertical-align: top;
+            padding:10px;
+
+        }
+        aside{
+            position: fixed;
+            display: flex;
+            flex-direction:column ;
+            right:0;
+            height:500px;
+            width: 20%;
+        }
+        .connect{
+            width:100px;
+            height:40px;
+            background-color:rgb(38, 235, 67);
+            color: #333;
+            border-radius: 8px;
+        }
+
+        .connect:hover{
+            background-color: #fff;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color:black;
+            /* background-color: white; */
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+            /* border-radius: 10px; */
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        .user-p {
+            margin-left:40px;
+            padding-left: 5px;
+            /* padding-top: 25px; */
+        }
+        .user-p img {
+            width: 80px;
+            border-radius: 50%;
+        }
+        .user-p h2 {
+            color: #ccc;
+            /* padding: 5px 0; */
+            margin-left:5px;
+            font-weight: bold;
+            font-size: 2rem;
+            }
+         ul {
+            list-style: none; /* This removes the default bullets */
+            margin-left: 0px;
+        }
+
+        .selected {
+            background-color: rgba(173, 216, 230, 0.5);
+            /* border: 4px solid lightblue; */
+            /* border-radius: 20px; */
+            /* width:170px;
+            height:60px; */
+            margin-left:30px;
+            
+        } 
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+        }
+        /* .title{
+            font-size: 24px;
+        } */
+        .logo {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+        .logo:hover {
+            transform: scale(1.2);
+        }
+        .title {
+            margin: 0;
+        }
+
+        .symbols {
+            font-size: 24px;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .symbols span {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+        }
+
+        .symbol {
+            margin: 0;
+        }
+
+
+
+        .symbols .symbol {
+            margin-right: 1px; 
+        }
+        .heart {
+            color: white;
+        }
+
+        .key {
+            color: white;
+        }
+
+        .flag {
+            color: white;
+        }
+
+        .gem {
+            color: white;
+        }
+
+        .count {
+            font-size: 16px;
+        }
+        #section-1{
+            height:50rem;
+            border:2px solid white;
+            margin-bottom:60px;
+        }
+        #section-2{
+            height:50rem;
+            border:2px solid white;
+            margin-bottom:60px;
+          
+        }
+        #section-3{
+            height:50rem;
+            border:2px solid white;
+            margin-bottom:60px;
+        }
+        #section-4{
+            height:50rem;
+            border:2px solid white;
+            margin-bottom:60px;
+        }
+        #section-5{
+            height:50rem;
+            border:2px solid white;
+            margin-bottom:60px;
+        }
+        #section-6{
+            height:50rem;
+            border:2px solid white;
+            /* margin-bottom:60px; */
+
+        }
+        .box1 {
+             height: 150px;
+             border: 2px solid #fff;
+             background-color: rgb(39, 216, 39);
+             color: black;
+             position: relative;
+           
+        }
+        .box2{
+            height:150px;
+            border:2px solid #fff;
+            background-color:rgb(216, 26, 140);
+            color:black;
+            position: relative;
+        }
+        .box2 .guide {
+            position: absolute;
+            bottom: 10px;
+            right: 10px; 
+            z-index: 1;
+        }
+        .box3{
+            height:150px;
+            border:2px solid #fff;
+            background-color: rgba(211, 12, 12, 0.641);
+            color: black;
+            position: relative;
+        }
+        .box4{
+            height:150px;
+            border:2px solid #fff;
+            background-color: rgb(57, 163, 216);
+            color: black;
+            position: relative;
+        }
+        .box5{
+            height:150px;
+            border:2px solid #fff;
+            background-color: rgb(227, 196, 19);
+            color: black;
+            position: relative;
+        }
+        .box6{
+            height:150px;
+            border:2px solid #ccc;
+            background-color: #ccc;
+            color: black;
+            position: relative;
+        }
+        .head{
+            color:black;
+            margin-top:45px;
+            margin-bottom:0;
+            font-size:40px;
+            font-weight:bold;
+            letter-spacing: 1px;
+            
+        }
+            .head1{
+            color:rgb(53, 165, 209);
+            margin-top:15px;
+            margin-bottom:0;
+            font-size:30px;
+            font-weight:bold;
+            letter-spacing: 1px;
+            
+        }
+            .head2{
+            color:rgb(53, 165, 209);
+            margin-top:15px;
+            margin-bottom:0;
+            font-size:25px;
+            font-weight:bold;
+            letter-spacing: 1px;
+
+        }
+            .head3{
+            color:rgb(53, 165, 209);
+            margin-top:15px;
+            margin-bottom:0;
+            font-size:20px;
+            font-weight:bold;
+            letter-spacing: 1px;
+
+        }
+            .sub-head2{
+            color:black;
+            letter-spacing: 1px;
+            font-size:18px;
+        }
+            .sub-head3{
+            color:black;
+            letter-spacing: 1px;
+            font-size:18px;
+        }
+            .sub-head{
+            color:black;
+            letter-spacing: 1px;
+            font-size:30px;
+        }
+            
+            .guide{
+            position: absolute; 
+            top: 45px;
+            right: 20px; 
+            z-index: 1; 
+        }
+           
+            
+            
+            .guide button{
+            width: 200px;
+            padding: 10px; 
+            font-size: 16px; 
+            font-family: 'Poppins', sans-serif; 
+            border: 2px solid #ccc; 
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer; 
+            font-weight: bold;
+        }
+            /* .guide button:hover{
+            background-color: white;
+            cursor: pointer;
+        } */
+            .box-content {
+            position: relative; 
+        }
+        .hidden-guide {
+            display: none;
+        }
+            .guide-content {
+            background: white;
+            padding: 20px;
+            height:600vh;
+            border: 1px solid #ccc;
+        }
+            .back-link {
+            text-decoration: none;
+            color: #0074a2; 
+            font-size: 24px;
+            display: inline-flex;
+            align-items: center;
+            letter-spacing: 1px;
+        }
+            .back-link i {
+            margin-right: 8px; 
+        }
+        .back-link:hover {
+            color: #005685; 
+        }
+             /* .smallbox{
+            width:200px;
+            height:80px;
+            border:1px solid black;
+            border-radius: 10px;
+            padding:20px;
+            float:left;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        } */
+            .smallbox {
+            width: 200px;
+            height: 80px;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 40px;
+            display: inline-block;
+            vertical-align: top;
+        }
+            .smallbox2 {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 40px;
+            display: inline-block;
+            vertical-align: top;
+        }
+            .smallbox i{
+            font-size: 36px; 
+            cursor: pointer;
+            float: left;
+             }
+            .mediumbox{
+            width:800px;
+            height:170vh;
+            border:2px solid #ccc;
+            border-radius: 5px;
+            background-color:rgb(131, 208, 238);
+            color:black;
+            margin: 40px;
+            display: inline-block;
+            vertical-align: top;
+            
+        }
+            .tinyhead{
+            color:black;
+            margin-top:15px;
+            margin-bottom:0;
+            font-size:30px;
+            font-weight:bold;
+            letter-spacing: 1px;
+
+        }
+            .sentence{
+            color:black;
+            font-size:24px;
+            
+        }
+            .whitebox{
+            width:200px;
+            height:100px;
+            background-color: white;
+            color:black;
+            margin: 50px;
+            display: inline-block;
+            vertical-align: top;
+            padding:20px;
+        }
+            .mediumbox hr{
+            width:80%;
+            border:1px solid #ccc;
+             }
+            table {
+            border-collapse: collapse;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            
+            }
+            table, th, td {
+            border: 1px solid black;
+            }
+
+            th, td {
+            padding: 10px;
+            text-align: center;
+             }
+            .table1 {
+            border-collapse: collapse;
+            }
+
+            .table1 td {
+            padding: 5px;
+            }
+            .button{
+            width:80px;
+            height:80px;
+            background-color: rgb(50, 200, 230);
+            color:black;
+            cursor: pointer;
+            display: block;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+       
+        }
+            i{
+            cursor: pointer;
+            }
+            .task1 img {
+                width: 100px;
+                height: 100px;
+                background-color: aquamarine;
+                border-radius:50%;
+                margin-top: 35px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+               
+               
+            }
+            .task2 img{
+                width:100px;
+                height:100px;
+                border-radius:50%;
+                margin-top:10px;
+                margin-left:550px;
+                /* display:flex; */
+                /* margin-right:1000px; */
+                /* align-items: end;
+                justify-content: right; */
+
+            }
+            
+  
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGwAAABsCAMAAAC4uKf/AAAAMFBMVEX///8AAABERETt7e1aWlqXl5eDg4Pu7u7MzMwQEBCUlJS/v7/CwsJAQEDOzs6EhIRuN22mAAAAk0lEQVRoge3WSQ6AMAwEQUwI+/L/3wJHAhckj3Pp+kBLyETTNAAAAFWluWvddXP6auXJJKb8bvWa1K0vW4uuZbYWsU0Za4vjULbMhkds1MbGyNhe7zOGHkjs6St/6uP9hEQ+V9eRZMVDnD8fYgBAbczv35jfTpjfLpjfDpjfAIBAzO/fmN9OmN8umN8OmN8AAAASJ8ewE/w22QSFAAAAAElFTkSuQmCC" onclick="openNav()" alt="Logo">
+            <h1 class="title">Fluent Fusion</h1>
+            <span class="symbols">
+                <span class="symbol heart">❤<span class="count">5</span></span>
+                <span class="symbol key">🔑<span class="count">10</span></span>
+                <span class="symbol flag">🚩<span class="count">1</span></span>
+                <span class="symbol gem">💎<span class="count">100</span></span>
+            </span>
+        </div>
+    </header>
+    <div class="container">
+        <nav class="sidebar">
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <div class="user-p">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsEC-AcpMSEBeqwQdUVhjb5fciR-GG2-cuwQ&usqp=CAU">
+                <h2><%= session.username %></h2>
+            </div>
+            <ul>
+            <li>
+                <a href="home" onclick="selectMenuItem('home')">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="selectMenuItem('leaderboard')">
+                    <i class="fa fa-trophy" aria-hidden="true"></i>
+                        <span>Leaderboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="selectMenuItem('quests')">
+                    <i class="fa fa-tasks" aria-hidden="true"></i>
+                        <span>Quests</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick="selectMenuItem('help')">
+                    <i class="fa fa-question-circle" aria-hidden="true"></i>
+                        <span>Help</span>
+                </a>
+            </li>
+            <li>
+                <a href="home" onclick="selectMenuItem('logout')">
+                    <i class="fa fa-power-off" aria-hidden="true"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+        </ul>
+        
+          </div>
+          
+        </nav>
+        <main class="content">
+            <div id="guideBookContent" class="hidden-guide">
+                <div class="guide-content">
+                    <a href="dashboard2" class="back-link">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i> Back
+                    </a>
+                    <hr>
+                    <p class="head">Unit-1</p>
+                    <p class="sub-head">Explore grammar tips and key phrases for this unit</p>
+                    <hr>
+                    <p class="head1">Key phrases</p>
+                    <p class="sub-head">Use basic phrases</p>
+                    <div class="smallbox">
+                        <i id="from" class="fa fa-volume-up" onclick="speakText('Je suis Marie.', 'fr')"></i> 
+                        <p>Je suis Marie.</p>
+                        <p>I am Marie.</p>
+                    </div>
+                    <div class="smallbox">
+                        <i id="from" class="fa fa-volume-up" onclick="speakText('Cest un chat.', 'fr')"></i> 
+                        <p>C'est un chat.</p>
+                        <p>It's a cat.</p>
+                    </div>
+                    <div class="smallbox">
+                        <i id="from" class="fa fa-volume-up" onclick="speakText('Un chat mange.', 'fr')"></i> 
+                        <p>Un chat mange.</p>
+                        <p>A cat is eating.</p>
+                    </div>
+                    <div class="smallbox">
+                        <i id="from" class="fa fa-volume-up" onclick="speakText('Tu es Marc ?', 'fr')"></i> 
+                        <p>Tu es Marc ?</p>
+                        <p>Are you Marc?</p>
+                    </div>
+                    <div class="mediumbox">
+                        <p class="tinyhead">Tip</p>
+                        <p class="head1">Gender</p>
+                        <p class="sentence">In French, all 
+                            nouns
+                             are either 
+                            masculine or feminine
+                            . Masculine nouns use 
+                            un
+                            , and feminine nouns use 
+                            une
+                            .</p>
+                        <div class="whitebox">
+                            <p class="head2">un garçon  <i id="from" class="fa fa-volume-up" onclick="speakText('un garçon', 'fr')"></i></p>
+                            <hr>
+                            <p class="sub-head2">a boy</p>
+                        </div>
+                        <div class="whitebox">
+                            <p class="head2">une fille  <i id="from" class="fa fa-volume-up" onclick="speakText('une fille', 'fr')"></i></p>
+                            <hr>
+                            <p class="sub-head2">a girl</p>
+                        </div>
+                        <div class="whitebox">
+                            <p class="head2">un homme  <i id="from" class="fa fa-volume-up" onclick="speakText('un homme', 'fr')" ></i></p>
+                            <hr>
+                            <p class="sub-head2">a man</p>
+                        </div>
+                        <div class="whitebox">
+                            <p class="head2">un chien  <i id="from" class="fa fa-volume-up" onclick="speakText('un chien', 'fr')" ></i></p>
+                            <hr>
+                            <p class="sub-head2">a dog</p>
+                        </div>
+                        <hr>
+                        <p class="tinyhead">Tip</p>
+                        <p class="head1">I think, therefore...</p>
+                        <p class="sentence">In English, we say I am but you are. In French, you do the same thing!</p>
+                        <center>
+                            <table>
+                                <tr>
+                                    <th>Subject</th>
+                                    <th>Verb (être)</th>
+                                </tr>
+                                <tr>
+                                    <td>je / I</td>
+                                    <td>suis (am)</td>
+                                </tr>
+                                <tr>
+                                    <td>tu / you</td>
+                                    <td>es (are)</td>
+                                </tr>
+                                <tr>
+                                    <td>il / elle (he / she)</td>
+                                    <td>est (is)</td>
+                                </tr>
+                                    
+                            </table>
+                        </center>
+                        <center>
+                            <div class="whitebox">
+                                <p class="head3">Je suis un garçon.  <i id="from" data-text="Je suis Marie." class="fa fa-volume-up" onclick="speakText('Je suis un garçon.', 'fr')"></i></p>
+
+                                <hr>
+                                <p class="sub-head2">I am a boy</p>
+                            </div> 
+                        </center>    
+                        
+                    </div>
+                    <p class="head1">Key phrases</p>
+                    <p class="sub-head">Greet people</p>
+                    <div class="smallbox2">
+                        <i id="from" class="fa fa-volume-up" onclick="speakText('Bonjour, comment ça va ?', 'fr')"></i> 
+                        <p>Bonjour, comment ça va ?</p>
+                        <p>Good morning, how are you doing?</p>
+                    </div>
+                    <div class="smallbox2">
+                        <i id="from" class="fa fa-volume-up" onclick="speakText('Ça va très bien, et toi ?', 'fr')"></i> 
+                        <p>Ça va très bien, et toi ?</p>
+                        <p>I am doing very well, and you?</p>
+                    </div>
+                    <div class="smallbox2">
+                        <i id="from" class="fa fa-volume-up" onclick="speakText('Ça va.', 'fr')"></i> 
+                        <p>Ça va.</p>
+                        <p>I am fine.</p>
+                    </div>
+                    <div class="smallbox2">
+                        <i id="from" class="fa fa-volume-up" onclick="speakText('Au revoir, Marie.', 'fr')"></i> 
+                        <p>Au revoir, Marie.</p>
+                        <p>Goodbye, Marie.</p>
+                    </div>
+                    <div class="smallbox2">
+                        <i id="from" class="fa fa-volume-up" onclick="speakText('Au revoir, bonne journée.', 'fr')"></i> 
+                        <p>Au revoir, bonne journée.</p>
+                        <p>Goodbye, have a good day.</p>
+                    </div>
+                    <div class="smallbox2">
+                        <i id="from" class="fa fa-volume-up" onclick="speakText('Merci beaucoup.', 'fr')"></i> 
+                        <p>Merci beaucoup.</p>
+                        <p>Thank you very much.</p>
+                    </div>
+                    <div class="mediumbox">
+                        <p class="tinyhead">Tip</p>
+                        <p class="head1">Accents</p>
+                        <p class="sentence">In French, an 
+                            accent mark
+                             over a letter can make a new sound. </p>
+                        <center>
+                            <table class="table1">
+                                <tr>
+                                    <td><button class="button" onclick="speakText('petition', 'fr')">je</button></td>
+                                    <td>je
+                                        (as in "petition")</td>
+                                </tr>
+                                <tr>
+                                    <td><button class="button" onclick="speakText('bay', 'fr')">é</button></td>
+                                    <td>journée
+                                        (similar to "bay")</td>
+                                </tr>
+                                <tr>
+                                    <td><button class="button" onclick="speakText('bet', 'fr')">è</button></td>
+                                    <td>
+                                        très
+                                         (as in "bet")</td>
+                                </tr>
+                                   
+                               
+                            </table>
+                        </center>
+
+                        <p class="sub-head2">If the last letter of a word is an e (without an accent!), it's usually silent.</p>
+                        <div class="whitebox">
+                            <p class="head3">femme  <i id="from" class="fa fa-volume-up" onclick="speakText('femme', 'fr')"></i> </p>
+                            <hr>
+                            <p class="sub-head2">woman</p>
+                        </div>
+                        <div class="whitebox">
+                            <p class="head3">bonne nuit  <i id="from" class="fa fa-volume-up" onclick="speakText('bonne nuit', 'fr')"></i></i></p>
+                            <hr>
+                            <p class="sub-head2">good night</p>
+                        </div> 
+                        
+                        
+                      
+                    </div>
+                </div>
+            </div>
+            <section id="section-1">
+                <div class="box1">
+                    <div class="box-content">
+                        <center>
+                            <p class="head">UNIT-1</p>
+                            <p class="sub-head">Use basic phrases, greet people</p>
+                        </center>
+                    </div>
+                    <div class="guide">
+                        <button onclick="toggleGuideBookContent('section-1')"><i class="fa fa-book" aria-hidden="true"></i> Guide Book</button>
+                    </div>
+                    
+                </div>
+                <center>
+                
+                    <div class="task1"  onclick="openTask1()">
+                        <img id="task1-image" src="data:image/png;base64,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">
+                    </div>
+                    </center>
+                    <div class="task2"  onclick="openTask2()">
+                        <img id="task2-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    <center>
+                    <div class="task1"  onclick="openTask3()">
+                        <img id="task3-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+                    <div class="task2"  onclick="openTask4()">
+                        <img id="task4-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    <center>
+                    <div class="task1"  onclick="openTask5()">
+                        <img id="task2-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+            </section>
+
+            <section id="section-2">
+                <div class="box2">
+                    <div class="box-content">
+                        <center>
+                            <p class="head">UNIT-2</p>
+                            <p class="sub-head">Introduce yourself, use the present tense</p>
+                        </center>
+                    </div>
+                    <div class="guide">
+                        <button onclick="toggleGuideBookContent()"><i class="fa fa-book" aria-hidden="true"></i> Guide Book</button>
+                    </div>
+                </div>
+                <center>
+                
+                    <div class="task1"  onclick="openTask1()">
+                        <img id="task1-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+                    <div class="task2"  onclick="openTask2()">
+                        <img id="task2-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    <center>
+                    <div class="task1"  onclick="openTask3()">
+                        <img id="task3-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+                    <div class="task2"  onclick="openTask4()">
+                        <img id="task4-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    <center>
+                    <div class="task1"  onclick="openTask5()">
+                        <img id="task2-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+            </section>
+            <section id="section-3">
+                <div class="box3">
+                    <div class="box-content">
+                        <center>
+                            <p class="head">UNIT-3</p>
+                            <p class="sub-head">Get around town, refer to family members</p>
+                        </center>
+                    </div>
+                    <div class="guide">
+                        <button onclick="displayGuideBookContent()"><i class="fa fa-book" aria-hidden="true"></i> Guide Book</button>
+                    </div>
+                </div>
+                <center>
+                
+                    <div class="task1"  onclick="openTask1()">
+                        <img id="task1-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+                    <div class="task2"  onclick="openTask2()">
+                        <img id="task2-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    <center>
+                    <div class="task1"  onclick="openTask3()">
+                        <img id="task3-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+                    <div class="task2"  onclick="openTask4()">
+                        <img id="task4-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    <center>
+                    <div class="task1"  onclick="openTask5()">
+                        <img id="task2-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+            </section>
+
+            <section id="section-4">
+                <div class="box4">
+                    <div class="box-content">
+                        <center>
+                            <p class="head">UNIT-4</p>
+                            <p class="sub-head">Talk about things you do, form the plural</p>
+                        </center>
+                    </div>
+                    <div class="guide">
+                        <button onclick="toggleGuideBookContent()"><i class="fa fa-book" aria-hidden="true"></i> Guide Book</button>
+                    </div>
+                </div>
+                <center>
+                
+                    <div class="task1"  onclick="openTask1()">
+                        <img id="task1-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+                    <div class="task2"  onclick="openTask2()">
+                        <img id="task2-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    <center>
+                    <div class="task1"  onclick="openTask3()">
+                        <img id="task3-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+                    <div class="task2"  onclick="openTask4()">
+                        <img id="task4-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    <center>
+                    <div class="task1"  onclick="openTask5()">
+                        <img id="task2-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+            </section>
+
+            <section id="section-5">
+                <div class="box5">
+                    <div class="box-content">
+                        <center>
+                            <p class="head">UNIT-5</p>
+                            <p class="sub-head">Use the present tense, describe your family</p>
+                        </center>
+                    </div>
+                    <div class="guide">
+                        <button onclick="toggleGuideBookContent()"><i class="fa fa-book" aria-hidden="true"></i> Guide Book</button>
+                    </div>
+                </div>
+                <center>
+                
+                    <div class="task1"  onclick="openTask1()">
+                        <img id="task1-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+                    <div class="task2"  onclick="openTask2()">
+                        <img id="task2-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    <center>
+                    <div class="task1"  onclick="openTask3()">
+                        <img id="task3-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+                    <div class="task2"  onclick="openTask4()">
+                        <img id="task4-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    <center>
+                    <div class="task1"  onclick="openTask5()">
+                        <img id="task2-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIAbLijV7dwmRMhMki8hkBlQW3WEqBdov2Sw&usqp=CAU">
+                    </div>
+                    </center>
+            </section>
+
+            <section id="section-6">
+                <div class="box6">
+                    <div class="box-content">
+                        <center>
+                            <p class="head"><i class="fas fa-lock"></i></p>
+                            <p class="sub-head">Complete all the above units to unlock more!</p>
+                        </center>
+                    </div>
+                    <div class="guide">
+                        <button onclick="toggleGuideBookContent()"><i class="fa fa-book" aria-hidden="true"></i> Guide Book</button>
+                    </div>
+                </div>
+            </section>
+
+            <div id="guideBookContent"></div>
+        </main>
+        <aside class="ads">
+            <div class="addbox">
+                <p class="sub-head3">Connect With Freinds!</p>
+                <button class="connect" onclick="playOnlineButton()">Play Online</button>
+            </div>
+            <div class="addbox">
+                <p class="sub-head3">Start Conversation with your language!</p>
+                <button class="connect">Join Conversation</button>
+            </div>
+            <div class="addbox">
+                <p class="sub-head3">Create a profile to save your progress!</p>
+                <button class="connect">Create a profile</button>
+            </div>
+        </aside>
+
+        
+
+
+    </div>
+
+    <script>
+       function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        function selectMenuItem(menuItem) {
+            const menuItems = document.querySelectorAll('.sidenav li');
+            menuItems.forEach(item => item.classList.remove('selected'));
+            const selectedMenuItem = document.querySelector(a[onclick*='${menuItem}']);
+            selectedMenuItem.closest('li').classList.add('selected');
+        }
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Get the image URL parameter from the URL
+        const imageUrlParam = getUrlParameter('imageUrl');
+
+        // Update the task2 image source
+        const task2Image = document.getElementById('task2-image');
+        if (imageUrlParam) {
+            task2Image.src = imageUrlParam;
+        }
+
+        function toggleGuideBookContent() {
+            const sections = document.querySelectorAll('.content section');
+            const guideBookContent = document.getElementById("guideBookContent");
+
+            if (guideBookContent.style.display === "none" || guideBookContent.style.display === "") {
+                sections.forEach((section) => {
+                    section.style.display = "none";
+                });
+                guideBookContent.style.display = "block";
+                } else {
+                    sections.forEach((section) => {
+                    section.style.display = "block";
+                });
+                guideBookContent.style.display = "none";
+            }
+        }
+        function speakText(text, lang) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+             speechSynthesis.speak(utterance);
+        }
+        const fromVolumeIcon = document.querySelector(".row.from .icons .fa-volume-up");
+
+
+        fromVolumeIcon.addEventListener("click", () => {
+            
+        const fromText = document.querySelector(".from-text").value;
+
+  
+         const fromLanguage = document.querySelector(".row.from select").value;
+
+  
+        speakText(fromText, fromLanguage);
+        });
+        
+         function playOnlineButton() {
+        window.location.href = "playonline";
+    }
+      function openTask1(){
+        window.location.href="dashboard3";
+      }
+      function openTask2(){
+        window.location.href="dashboard4";
+      }
+  </script>
+</body>
+</html>

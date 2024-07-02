@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Fluent Fusion</title>
+    <link rel="website icon" href="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSI0pFMl9W_MoWl-sjRNRKrg_jGjHPMM6NJku0jsutPowFO7UEL">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+img{
+    width: 100%;
+    display: block;
+}
+.heading{
+    text-align: center;
+    padding: 1.4rem 0;
+    margin-bottom: 2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+}
+
+.featured-item{
+    position: relative;
+    width: 80%;
+    overflow: hidden;
+    padding-left: 50px;
+    -webkit-transition: var(--trans);
+    -o-transition: var(--trans);
+    transition: var(--trans);
+}
+.featured-item::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: -o-linear-gradient(top, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+    background: linear-gradient(to bottom, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+   
+}
+
+@media screen and (max-width: 460px){
+    .featured-item-content{
+        -webkit-transform: translateY(68%);
+            -ms-transform: translateY(68%);
+                transform: translateY(68%);
+    }
+}
+@media screen and (min-width: 768px){
+    
+    }
+    .row, .services-row, .footer-row{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .featured-item{
+        margin: 0;
+    }
+    @media screen and (min-width: 1400px){
+    .row{
+        grid-template-columns: repeat(3, 1fr);
+        margin-left: 50px;
+    }
+}
+.featured-item-content{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    color: #fff;
+    width: 80%;
+    padding: 1rem;
+    -webkit-transform: translateY(68%);
+        -ms-transform: translateY(68%);
+            transform: translateY(68%);
+    -webkit-transition: var(--trans);
+    -o-transition: var(--trans);
+    transition: var(--trans);
+}
+.featured-item-content span{
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 1.2rem;
+    text-transform: capitalize;
+}
+.featured-item-content .text{
+    color: #fff;
+    -webkit-transition: var(--trans);
+    -o-transition: var(--trans);
+    transition: var(--trans);
+    margin-left: 50px;
+}
+.featured-item:hover .featured-item-content{
+    -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+            transform: translateY(0);
+}
+
+    </style>
+    
+</head>
+<body>
+    <section id="featured" class="py-4">
+        <div class="container">
+              <div class="heading">
+                    <h2>Choose Your Language</h2>
+              </div>
+      
+              <div class="row">
+                    
+                    <div class="featured-item my-2 shadow">
+                        <a href="/dashboard2"> <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/255px-Flag_of_France.svg.png" alt="Flag 2">
+                          <div class="featured-item-content">
+                              <span><i class="fas fa-map-marker-alt"></i>French</span>
+                               <div>
+                                  <p class="text">Learning French unlocks a world of culture, cuisine, and connections that will broaden your horizons and enrich your life.</p>
+                               </div>
+                         </div></a>
+                     </div>
+
+                     <div class="featured-item my-2 shadow">
+                        <a href="#"><img src="https://cdn.britannica.com/44/344-004-494CC2E8/Flag-England.jpg" alt="Flag 1"></a> 
+                           <div class="featured-item-content">
+                               <span><i class="fas fa-map-marker-alt"></i>English</span>
+                                  <div>
+                                    <p class="text">Mastering English opens doors to global opportunities and enriches your life with new perspectives and connections</p>
+                                   </div>
+                            </div>
+                       </div>
+
+                     <div class="featured-item my-2 shadow">
+                        <img src="https://cdn.britannica.com/97/1597-004-05816F4E/Flag-India.jpg" alt="Flag 3">
+                          <div class="featured-item-content">
+                             <span><i class="fas fa-map-marker-alt"></i>Hindi</span>
+                             <div>
+                                <p class="text">Embrace the beauty of Hindi, a language that connects you to a vibrant culture, literature, and a deeper understanding of a diverse world.</p>
+                             </div>
+                           </div>
+                    </div>
+
+                    <div class="featured-item my-2 shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png" alt="Flag 3">
+                        <div class="featured-item-content">
+                            <span><i class="fas fa-map-marker-alt"></i>German</span>
+                               <div>
+                                 <p class="text">Learning German opens the door to a world of innovation, precision, and rich cultural heritage, offering new opportunities and experiences</p>
+                                </div>
+                         </div>
+                    </div>
+           
+                    <div class="featured-item my-2 shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/255px-Flag_of_the_Netherlands.svg.png" alt="Flag 3">
+                        <div class="featured-item-content">
+                            <span><i class="fas fa-map-marker-alt"></i>Dutch</span>
+                               <div>
+                                 <p class="text">"Discover the charm of Dutch, a gateway to a rich cultural heritage and a unique perspective on the world that awaits your exploration."</p>
+                                </div>
+                         </div>
+                    </div>
+                    
+                    <div class="featured-item my-2 shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Bandera_de_Espa%C3%B1a.svg/1200px-Bandera_de_Espa%C3%B1a.svg.png" alt="Flag 3">
+                        <div class="featured-item-content">
+                            <span><i class="fas fa-map-marker-alt"></i>Spanish</span>
+                               <div>
+                                 <p class="text">"Discover the passion and warmth of the Spanish language, opening doors to incredible experiences, friendships, and a deeper connection with a rich and diverse heritage."</p>
+                                </div>
+                         </div>
+                    </div>
+
+                    <div class="featured-item my-2 shadow">
+                        <img src="https://cdn.britannica.com/88/3588-004-E0E45339/Flag-Portugal.jpg" alt="Flag 3">
+                        <div class="featured-item-content">
+                            <span><i class="fas fa-map-marker-alt"></i>PORTUGUESE</span>
+                               <div>
+                                 <p class="text">"Discover the enchanting world of Portuguese, a language that opens the door to the rich tapestry of Lusophone cultures, music, and warm, welcoming communities."</p>
+                                </div>
+                         </div>
+                    </div>
+
+                    <div class="featured-item my-2 shadow">
+                        <img src="https://cdn.britannica.com/49/1049-004-AE4BAD3E/Flag-Greece.jpg" alt="Flag 3">
+                        <div class="featured-item-content">
+                            <span><i class="fas fa-map-marker-alt"></i>Greek</span>
+                               <div>
+                                 <p class="text">"Discover the ancient charm of Greek, a language that holds the key to unlocking the mysteries of history, philosophy, and a rich Mediterranean heritage."</p>
+                                </div>
+                         </div>
+                    </div>
+
+                    <div class="featured-item my-2 shadow">
+                        <img src="https://cdn.britannica.com/07/8007-004-8CF0B1A9/Flag-Denmark.jpg" alt="Flag 3">
+                        <div class="featured-item-content">
+                            <span><i class="fas fa-map-marker-alt"></i>Danish</span>
+                               <div>
+                                 <p class="text">"Discover the enchanting world of Danish, a language that opens doors to the captivating culture and heritage of Denmark, and enhances your global perspective."</p>
+                                </div>
+                         </div>
+                    </div>
+
+                    <div class="featured-item my-2 shadow">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_South_Korea.png" alt="Flag 3">
+                        <div class="featured-item-content">
+                            <span><i class="fas fa-map-marker-alt"></i>Korean</span>
+                               <div>
+                                 <p class="text">"Discover the wonders of the Korean language, a gateway to an incredible blend of modern technology, rich traditions, and a warm, welcoming society."</p>
+                                </div>
+                         </div>
+                    </div>
+
+                    <div class="featured-item my-2 shadow">
+                        <img src="https://cdn.britannica.com/90/7490-004-BAD4AA72/Flag-China.jpg" alt="Flag 3">
+                        <div class="featured-item-content">
+                            <span><i class="fas fa-map-marker-alt"></i>Chinese</span>
+                               <div>
+                                 <p class="text">"Discover the magic of the Chinese language, opening doors to a millennia-old culture, a global business powerhouse, and countless opportunities for personal growth and connection."</p>
+                                </div>
+                         </div>
+                    </div>
+
+                    <div class="featured-item my-2 shadow">
+                        <img src="https://cdn.britannica.com/55/1455-004-5897143C/Flag-Hungary.jpg" alt="Flag 3">
+                        <div class="featured-item-content">
+                            <span><i class="fas fa-map-marker-alt"></i>Hungerian</span>
+                               <div>
+                                 <p class="text">"Discover the unique charm of Hungarian, a language with a rich history and a gateway to an extraordinary and lesser-explored part of Europe."</p>
+                                </div>
+                         </div>
+                    </div>
+           
+            </div>
+        </div>
+    </section> 
+</body>
+</html>
